@@ -6,6 +6,14 @@ import plotly.express as px
 # Read CSV
 df = pd.read_csv('data.csv')
 
+# --- Merge Lot-good-bad.csv columns ---
+lot_good_bad = pd.read_csv('Lot-good-bad.csv')
+df = df.merge(lot_good_bad, on='LOT', how='left')
+df['Fab Defect Scans'] = df['Fab Defect Scans'].fillna('NA')  # <-- mark missing as 'NA'
+df['Nrows'] = df['Nrows'].fillna('NA')
+df['Nlot'] = df['Nlot'].fillna('NA')
+df['DiePrep CIM'] = df['DiePrep CIM'].fillna('NA')
+
 # Filter for OPN 194997 and 197573
 df_194997 = df[df['OPN'] == 194997].copy()
 df_197573 = df[df['OPN'] == 197573].copy()
@@ -57,9 +65,10 @@ fig = px.scatter(
     df_194997_unique,
     x='DELAY_TIME',
     y='ENTITY',
-    color='MULTI',
+    color='Fab Defect Scans',
+    color_discrete_map={'Clean': 'green', 'Defects': 'red'},  # custom color mapping
     title='DELAY_TIME vs ENTITY Scatter',
-    hover_data=['LOT', 'MULTI', 'SPLIT', 'LOT_ABORT_FLAG', 'QTY', 'DOTPROCESS']
+    hover_data=['LOT', 'MULTI', 'SPLIT', 'LOT_ABORT_FLAG', 'QTY', 'DOTPROCESS', 'PRODUCT'] + [col for col in lot_good_bad.columns if col != 'LOT']
 )
 app = dash.Dash(__name__)
 
@@ -148,15 +157,12 @@ def update_figure(selected_lot, start_date, end_date):
     # Filter by LOT
     if selected_lot:
         filtered_df = filtered_df[filtered_df['LOT'] == selected_lot]
-        # Add jitter to ENTITY (Y axis)
     jitter_strength = 0.05
     if not filtered_df.empty:
         filtered_df['ENTITY_JITTER'] = filtered_df['ENTITY']
-        # If ENTITY is numeric, add jitter directly
         if np.issubdtype(filtered_df['ENTITY'].dtype, np.number):
             filtered_df['ENTITY_JITTER'] += np.random.uniform(-jitter_strength, jitter_strength, size=len(filtered_df))
         else:
-            # If ENTITY is categorical, map to numbers, add jitter, then map back
             entity_map = {v: i for i, v in enumerate(sorted(filtered_df['ENTITY'].unique()))}
             filtered_df['ENTITY_NUM'] = filtered_df['ENTITY'].map(entity_map)
             filtered_df['ENTITY_JITTER'] = filtered_df['ENTITY_NUM'] + np.random.uniform(-jitter_strength, jitter_strength, size=len(filtered_df))
@@ -164,12 +170,12 @@ def update_figure(selected_lot, start_date, end_date):
         filtered_df,
         x='DELAY_TIME',
         y='ENTITY_JITTER',
-        color='SPLIT',
+        color='Fab Defect Scans',
+        color_discrete_map={'Clean': 'green', 'Defects': 'red'},  # custom color mapping
         title='DELAY_TIME vs ENTITY Scatter (Y Jittered)',
-        hover_data=['LOT', 'MULTI', 'SPLIT', 'LOT_ABORT_FLAG', 'QTY', 'DOTPROCESS', 'ENTITY', 'ENT_LOT_PROCESS']
+        hover_data=['LOT', 'MULTI', 'SPLIT', 'LOT_ABORT_FLAG', 'QTY', 'DOTPROCESS', 'ENTITY'] + [col for col in lot_good_bad.columns if col != 'LOT']
     )
     fig.update_xaxes(title_text='DELAY_TIME (hours)')
-    # Set y-axis ticks and labels to ENTITY values if categorical
     if not filtered_df.empty and not np.issubdtype(filtered_df['ENTITY'].dtype, np.number):
         entity_map = {v: i for i, v in enumerate(sorted(filtered_df['ENTITY'].unique()))}
         fig.update_yaxes(
@@ -180,7 +186,6 @@ def update_figure(selected_lot, start_date, end_date):
     else:
         fig.update_yaxes(title_text='ENTITY')
 
-    # Summary table by ENTITY
     if not filtered_df.empty:
         summary = filtered_df.groupby('ENTITY').agg(
             count=('DELAY_TIME', 'count'),
