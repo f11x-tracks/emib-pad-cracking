@@ -1,0 +1,100 @@
+LOT,Nrows,Nlot,Fab Defect Scans,DiePrep CIM
+W3179010,3,3,Clean,In FAB
+W3519680,6,6,Clean,In FAB
+W4139780,25,25,Clean,ADI
+W4299410,11,11,Clean,ADI/Stores
+W5052010,25,25,Clean,All Clean
+W5064590,25,25,Clean,All Clean
+W5064610,25,25,Clean,ADI
+W5070100,25,25,Clean,All Clean
+W5070110,25,25,Defects,"Defects, Defects"
+W5070440,25,25,Clean,"ADI, Clean, Clean"
+W5070460,25,25,Clean,"Clean, Clean"
+W5083300,24,24,Clean,"Clean, Clean, Clean"
+W5083310,25,25,Clean,"Clean, Clean"
+W5083320,24,24,Clean,"Clean, Clean"
+W5083330,25,25,Clean,"Clean, Clean"
+W5083940,25,25,Clean,"Clean, Clean"
+W5083950,25,25,Clean,"Clean, Clean, Clean, Clean"
+W5083960,25,25,Clean,"ADI, Clean"
+W5084710,25,25,Clean,"Clean, Clean, Clean, Clean, Clean"
+W5095250,24,24,Clean,"Clean, Clean"
+W5101180,25,25,Clean,"Clean, Clean"
+W5101560,25,25,Clean,"Clean, Clean, Clean, Clean"
+W5101580,25,25,Clean,"Clean, Clean, Clean"
+W5101600,25,25,Clean,"Clean, Clean"
+W5113400,25,25,Clean,"Clean, Clean"
+W5113410,25,25,Clean,"Clean, Clean, Clean, Clean"
+W5114160,25,25,Clean,"Clean, ADI, Clean, Clean, Clean, Clean, ADI"
+W5125420,25,25,Clean,"Clean, Clean"
+W5125430,25,25,Clean,"Clean, Clean"
+W5125440,25,25,Clean,"Clean, Clean"
+W5125910,24,24,Defects,"Defects, Defects"
+W5125950,25,25,Clean,ADI
+W5125960,25,25,Clean,"Clean, Clean"
+W5136260,25,25,Clean,"Clean, Clean, Clean"
+W5136300,25,25,Defects,"Clean, Minor Defects"
+W5136350,25,25,Defects,"Minor Defects, Minor Defects"
+W5136360,25,25,Clean,"Clean, Clean"
+W5141950,25,25,Defects,"Minor Defects, Clean, Minor Defects"
+W5141960,25,25,Clean,"Clean, Clean"
+W5141970,25,25,Clean,"Clean, Clean"
+W5142510,25,25,Clean,"Clean, Clean"
+W5149590,25,25,Clean,ADI
+W5149610,25,25,Clean,ADI
+W5155690,25,25,Clean,ADI
+W5155720,25,25,Clean,"Clean, Clean"
+W5156270,25,25,Defects,"Clean, Clean"
+W5156570,25,25,Clean,"Clean, Clean"
+W5163420,25,25,Clean,"Clean, Clean"
+W5163430,25,25,Clean,"Clean, Clean"
+W5163440,25,25,Defects,"ADI, Clean, ADI"
+W5170590,24,24,Clean,"Clean, Clean"
+W5170600,25,25,Clean,"Clean, Clean, Clean, Clean"
+W5170610,25,25,Clean,"Clean, Clean"
+W5182220,25,25,Clean,"ADI, Clean, Clean"
+W5191310,25,25,Clean,"Clean, Clean, Clean"
+W5195540,25,25,Clean,ADI
+W5203630,25,25,Clean,"Clean (AT CIM), Clean, Clean"
+W5203640,25,25,Defects,"ADI, Clean"
+W5204130,25,25,Clean,"Clean, Clean, Clean, Clean"
+W5204680,25,25,Clean,"Clean, Clean, Clean"
+W5210840,25,25,Clean,ADI
+W5210850,25,25,Clean,ADI
+W5210860,25,25,Clean,ADI
+W5210870,25,25,Clean,"Clean, Clean, Clean, Clean"
+W5211380,25,25,Clean,ADI
+W5211390,25,25,Clean,ADI
+W5216240,25,25,Clean,"Clean, Clean"
+W5216250,25,25,Defects,"Scrap, Defects, Defects, Defects"
+W5223380,25,25,Clean,Clean (TD FOR MANUEL)
+W5223390,25,25,Clean,ADI (TD FOR MANUEL)
+W5234300,25,25,Clean,"Clean, Clean"
+W5240620,25,25,Clean,ADI
+W5240630,25,25,Clean,ADI
+W5240640,25,25,Clean,ADI
+W5240940,25,25,Clean,"Clean, Clean"
+W5240960,25,25,Clean,ADI
+W5241210,25,25,Clean,ADI
+W5241220,25,25,Clean,ADI
+W5241230,25,25,Clean,ADI
+W5251980,25,25,Clean,ADI
+W5252870,25,25,Clean,ADI
+W5253180,25,25,Clean,ADI
+W5253190,25,25,Clean,"Clean, Clean"
+W5253200,25,25,Clean,"Clean, Clean, Clean, Clean, Clean"
+W5253220,25,25,Clean,ADI
+W5263860,25,25,Clean,"ADI, DCO, Clean, Clean"
+W5264430,25,25,Clean,"ADI, Clean, ADI"
+W5264440,25,25,Clean,ADI
+W5264450,25,25,Defects,In FAB
+W5265660,25,25,Clean,ADI
+W5266050,25,25,Clean,ADI
+W5266060,25,25,Clean,"ADI, Clean, DCO"
+W5266070,25,25,Clean,ADI
+W5266200,25,25,Clean,ADI
+W5270490,25,25,Clean,In FAB
+W5270500,25,25,Clean,In FAB
+W5270920,25,25,Clean,ADI
+W5271110,25,25,Clean,ADI
+W5282900,25,25,Clean,In FAB
